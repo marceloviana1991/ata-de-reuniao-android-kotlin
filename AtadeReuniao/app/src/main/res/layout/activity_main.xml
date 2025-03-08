@@ -140,66 +140,12 @@
                 android:inputType="numberDecimal"
                 />
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/vendaDeLiteratura"
+            android:id="@+id/desepesas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Venda de literatura">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/saldoAnterior"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Saldo anterior">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/aluguel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Aluguel">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/manutencaoDaSala"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Manutenção da sala">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/despesasComServidor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Despesas com servidor">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/compraDeLiteratura"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Compra de literatura">
+            android:hint="Despesas">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
