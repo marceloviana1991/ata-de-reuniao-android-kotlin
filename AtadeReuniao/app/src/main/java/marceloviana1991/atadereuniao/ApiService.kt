@@ -11,4 +11,7 @@ interface ApiService {
 
     @GET("ata/{mes}/{ano}")
     suspend fun listarPorMesEAno(@Path("mes") mes: Int, @Path("ano") ano: Int): List<AtaResponse>
+
+    @GET("ata/{id}")
+    suspend fun detalharAta(@Path("id") id: Long): AtaResponse
 }

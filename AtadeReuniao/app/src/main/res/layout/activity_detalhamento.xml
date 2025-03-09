@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity"
+        android:orientation="vertical"
+        android:padding="24dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dados da reunião"
+            android:textSize="24sp" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/numeroDaReuniao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Número da reunião">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/quantidadeDeParticipantes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quantidade de membros">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/quantidadeDeVisitantes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quantidade de visitantes">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/quantidadeDeIngressos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quantidade de ingressos">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <CheckBox
+            android:id="@+id/reuniaoAberta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="Reunião aberta" />
+        <CheckBox
+            android:id="@+id/reuniaoDeServico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="Reunião de serviço" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Servidores"
+            android:textSize="24sp"
+            android:layout_marginTop="16dp"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/secretario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Secretário">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tesoureiro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tesoureiro">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/rsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="RSG">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/rsgSuplente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="RSG suplente">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sétima Tradição"
+            android:textSize="24sp"
+            android:layout_marginTop="16dp"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/setimaTradicao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Sétima tradição">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/desepesas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Despesas">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observações"
+            android:textSize="24sp"
+            android:layout_marginTop="16dp"/>
+        <EditText
+            android:id="@+id/observacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_edit_text_observacoes"
+            android:lines="5"
+            android:gravity="top|start"
+            android:maxLines="10"
+            android:scrollbars="vertical"
+            android:padding="8dp"
+            android:focusable="false"
+            android:hint="Inserir texto de observação" />
+
+    </LinearLayout>
+
+</ScrollView>
