@@ -1,10 +1,10 @@
 package marceloviana1991.atadereuniao
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import marceloviana1991.atadereuniao.databinding.ActivityMainBinding
+import marceloviana1991.atadereuniao.databinding.FormularioListarBinding
 import java.math.BigDecimal
 
 class MainActivity : AppCompatActivity() {
@@ -112,12 +113,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun exibeCaixaDeDialogo() {
+        val formularioBinding = FormularioListarBinding.inflate(layoutInflater)
         AlertDialog.Builder(this)
             .setTitle("Listar atas por mês")
             .setMessage("Informe o periodo das atas que deseja listar")
-            .setView(R.layout.formulario_listar)
+            .setView(formularioBinding.root)
             .setPositiveButton("CONFIRMAR") { _, _ ->
-
+                val intent = Intent(this, ListagemActivity::class.java)
+                intent.putExtra("mes", formularioBinding.mesQueDesejaListar.editText?.text.toString().toInt())
+                intent.putExtra("ano", formularioBinding.anoQueDesejaListar.editText?.text.toString().toInt())
+                startActivity(intent)
             }
             .setNegativeButton("CANCELAR") { _, _ ->
 
