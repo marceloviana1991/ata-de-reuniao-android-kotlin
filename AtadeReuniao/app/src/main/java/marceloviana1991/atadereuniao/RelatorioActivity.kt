@@ -1,8 +1,6 @@
 package marceloviana1991.atadereuniao
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,15 +8,13 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
-import marceloviana1991.atadereuniao.databinding.ActivityListagemBinding
+import marceloviana1991.atadereuniao.databinding.ActivityRelatorioBinding
 
-class ListagemActivity : AppCompatActivity() {
+class RelatorioActivity : AppCompatActivity() {
 
     private val binding by lazy {
-        ActivityListagemBinding.inflate(layoutInflater)
+        ActivityRelatorioBinding.inflate(layoutInflater)
     }
-
-    private lateinit var adapter: ArrayAdapter<AtaResponse>
     private lateinit var listaDeAtasPorMesEAno: List<AtaResponse>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,31 +30,25 @@ class ListagemActivity : AppCompatActivity() {
         val mes = intent.getIntExtra("mes", 0)
         val ano = intent.getIntExtra("ano", 0)
 
-        val listView = binding.listView
-
         val mainScope = MainScope()
         mainScope.launch {
             listaDeAtasPorMesEAno = RetrofitClient.instance.listarPorMesEAno(mes, ano)
-            adapter = ArrayAdapter(
-                this@ListagemActivity,
-                android.R.layout.simple_list_item_1,
-                listaDeAtasPorMesEAno
+            binding.totalDeParticipantes.editText?.setText(
+                listaDeAtasPorMesEAno.sumOf { it.quantidadeDeParticipantes }.toString()
             )
-            listView.adapter = adapter
-        }
-
-        listView.onItemClickListener = AdapterView.OnItemClickListener {  _, _, position, _ ->
-            val intent = Intent(this, DetalhamentoActivity::class.java)
-            val id = listaDeAtasPorMesEAno[position].id
-            intent.putExtra("id", id)
-            startActivity(intent)
-        }
-
-        binding.button.setOnClickListener {
-            val intent = Intent(this, RelatorioActivity::class.java)
-            intent.putExtra("mes", mes)
-            intent.putExtra("ano", ano)
-            startActivity(intent)
+            binding.totalDeVisitantes.editText?.setText(
+                listaDeAtasPorMesEAno.sumOf { it.quantidadeDeVisitantes }.toString()
+            )
+            binding.secretario.editText?.setText(listaDeAtasPorMesEAno.last().secretario)
+            binding.tesoureiro.editText?.setText(listaDeAtasPorMesEAno.last().tesoureiro)
+            binding.rsg.editText?.setText(listaDeAtasPorMesEAno.last().rsg)
+            binding.rsgSuplente.editText?.setText(listaDeAtasPorMesEAno.last().rsgSuplente)
+            binding.totalDeSetimaTradicao.editText?.setText(
+                listaDeAtasPorMesEAno.sumOf { it.setimaTradicao }.toString()
+            )
+            binding.totalDeDesepesas.editText?.setText(
+                listaDeAtasPorMesEAno.sumOf { it.despesas }.toString()
+            )
         }
 
     }
